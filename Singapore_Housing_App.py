@@ -14,13 +14,13 @@ import plotly.graph_objects as go
 
 
 # importning the pickled Dict of townMapping , streetMapping ,flatTypeMapping
-with open(r"saved_Model_Pickel\\townMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/townMapping.pkl", 'rb') as file:
     townDict = pickle.load(file)        
 #st.write(townDict)
-with open(r"saved_Model_Pickel\\streetMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/streetMapping.pkl", 'rb') as file:
     streetDict = pickle.load(file)
 #st.write(streetDict)
-with open(r"saved_Model_Pickel\\flatTypeMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
@@ -29,7 +29,7 @@ df_4Sel = pd.read_csv(r'csv_data\\csv_4UI_selFilter.csv')
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
     page_title="Singapore Resale Flat Prices Prediction",
-    page_icon="chart\icon_singapore.png",
+    page_icon="chart/icon_singapore.png",
     layout="wide",
     initial_sidebar_state='expanded'
 )
