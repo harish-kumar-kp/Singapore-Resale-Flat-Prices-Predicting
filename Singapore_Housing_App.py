@@ -5,28 +5,31 @@ import pandas as pd
 import numpy as np
 from xgboost.sklearn import XGBRegressor 
 from sklearn.tree import DecisionTreeRegressor
+import os
 import pickle
 import matplotlib.pyplot as plt  
 import plotly.graph_objects as go   
 
 
+
+
 # importning the pickled Dict of townMapping , streetMapping ,flatTypeMapping
-with open(r"saved_Model_Pickel/townMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\\townMapping.pkl", 'rb') as file:
     townDict = pickle.load(file)        
 #st.write(townDict)
-with open(r"saved_Model_Pickel/streetMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\\streetMapping.pkl", 'rb') as file:
     streetDict = pickle.load(file)
 #st.write(streetDict)
-with open(r"saved_Model_Pickel/flatTypeMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\\flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
-df_4Sel = pd.read_csv(r'https://www.dropbox.com/scl/fi/93ae5d15l3k2ypxf9ojg3/csv_4UI_selFilter.csv?rlkey=3uyzcs4c7z5bllyhn6lnxc01p&st=xkca99vj&dl=1')
+df_4Sel = pd.read_csv(r'csv_data\\csv_4UI_selFilter.csv')
 
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
     page_title="Singapore Resale Flat Prices Prediction",
-    page_icon="chart/icon_singapore.png",
+    page_icon="D:\SingaporeRealEstate\photos\icon_singapore.png",
     layout="wide",
     initial_sidebar_state='expanded'
 )
@@ -41,7 +44,7 @@ with st.sidebar:
                                    },
                                    default_index=1
                            )
-    st.image("chart/singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
+    st.image("D:\SingaporeRealEstate\photos/singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
 
 
 # -----------------------------------------------Home Section--------------------------------------------------
@@ -79,23 +82,23 @@ if selected == "Home":
     st.divider()
     st.markdown("##### :blue[Processed Data for Machine Learning :] ")
     st.markdown("###### :blue[1. DataFrame of House Details :] ")
-    df_propData = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
+    df_propData = pd.read_csv(r'csv_data\\ML_data4Prediction.csv')
     st.write(df_propData)
     #st.write("The Datasets are Label Endocoded(Converted From String type data to Numerical type data) for 'Town' , 'Street' , FlayType and 'Flat Model' in a Python way so as to create a ML ready Dataframe")
     st.write("###### :red[ *Note : The Datasets are Label Endocoded(Converted From String to Numerical type data) for 'Town' , 'Street' , FlayType and 'Flat Model' in a Python way so as to create a ML ready Dataframe.*]")
     st.write("###### :green[ *Source :* https://data.gov.sg/collections/189/view]")
     st.divider() 
     st.markdown("###### :blue[2. DataFrame of Distence from MRTS & CBD Details :] ")
-    df_distData = pd.read_csv(r'csv_data/mrts_cbd_Dist_onMainDF_ToML.csv')
+    df_distData = pd.read_csv(r'csv_data\\mrts_cbd_Dist_onMainDF_ToML.csv')
     st.write(df_distData)
     st.write("###### :red[ *Note : These datasets were created additionally from external resources as a part of feature engineering aspect.*]")
     st.write("###### :green[ *Source :* https://mrtmapsingapore.com/mrt-stations-singapore/ ]")
     st.divider()
     st.markdown("###### :blue[3. Model Comparison chart :] ")
-    st.image('chart/modelComparison.png') 
+    st.image('chart\\modelComparison.png') 
     st.divider()
     st.markdown("###### :blue[4. Feature Comparison chart :] ")
-    st.image('chart/FeatureChart.png') 
+    st.image('chart\\FeatureChart.png') 
 
 
 # ------------------------------------------------Predict Section---------------------------------------------------
@@ -239,7 +242,7 @@ if selected == "Predict":
             if st.button('Predict Price' ):
                 def get_data():
                     # Load data
-                    data = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
+                    data = pd.read_csv(r'csv_data\\ML_data4Prediction.csv')
                     sample_df = data.sample(n=25000, random_state=42)
                     return sample_df
                 
@@ -288,7 +291,7 @@ try:
         with col1:
             st.markdown("##### :violet[Analyzing Results of Future from Past by]")
         with col2:
-            st.markdown("##### :white[Prices on Years Trend Pattern Analysis]")
+            st.markdown("##### :grey[Prices on Years Trend Pattern Analysis]")
         with col3:
             st.write(":violet[5Rooms,ImprovedModel,8 Storey & 80 SqM as Standards]")
         
@@ -398,23 +401,6 @@ try:
 
             st.markdown("###### :small_red_triangle_down: :orange[ *Click here to Analyse by Comparing 3 selected Towns*]")
 
-            def get_data():
-                            # Load data
-                            data = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
-                            sample_df = data.sample(n=45000, random_state=47)
-                            return sample_df
-                        
-            csv_df = get_data()
-
-            def train_model(data):
-                            # Train model here
-                            X = data.drop(['resale_price'], axis=1)
-                            y = data['resale_price']
-
-                            trained_model = DecisionTreeRegressor(max_depth=25, max_features = 1.0 ,min_samples_leaf = 10, min_samples_split = 4 ,random_state=12)
-                            trained_model.fit(X, y)
-                            return trained_model
-
             if st.button( 'Analyse Trendz' ):
                 for i in range(3):
                     town_val=townValLst[i]
@@ -440,6 +426,24 @@ try:
 
                         features_df = pd.DataFrame(features, index=[0])
 
+                        def get_data():
+                            # Load data
+                            data = pd.read_csv(r'csv_data\\ML_data4Prediction.csv')
+                            sample_df = data.sample(n=45000, random_state=47)
+                            return sample_df
+                        
+                        csv_df = get_data()
+
+
+                        def train_model(data):
+                            # Train model here
+                            X = data.drop(['resale_price'], axis=1)
+                            y = data['resale_price']
+
+                            trained_model = DecisionTreeRegressor(max_depth=25, max_features = 1.0 ,min_samples_leaf = 10, min_samples_split = 4 ,random_state=12)
+                            trained_model.fit(X, y)
+                            return trained_model
+                        
                         dt_regressor = train_model(csv_df)
 
                         # Use the trained model to make predictions
