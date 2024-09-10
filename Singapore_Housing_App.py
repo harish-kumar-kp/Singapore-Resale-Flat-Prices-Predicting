@@ -10,16 +10,14 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go   
 
 
-
-
 # importning the pickled Dict of townMapping , streetMapping ,flatTypeMapping
-with open(r"saved_Model_Pickel\\townMapping.pkl", 'rb') as file:
+with open("saved_Model_Pickel\\townMapping.pkl", 'rb') as file:
     townDict = pickle.load(file)        
 #st.write(townDict)
-with open(r"saved_Model_Pickel\\streetMapping.pkl", 'rb') as file:
+with open("saved_Model_Pickel\\streetMapping.pkl", 'rb') as file:
     streetDict = pickle.load(file)
 #st.write(streetDict)
-with open(r"saved_Model_Pickel\\flatTypeMapping.pkl", 'rb') as file:
+with open("saved_Model_Pickel\\flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
