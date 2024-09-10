@@ -1,9 +1,0 @@
-pip install streamlit
-pip install streamlit-option-menu
-pip install pandas
-pip install numpy
-pip install scikit-learn
-pip install xgboost
-pip install pickle4
-pip install matplotlib
-pip install plotly-express
