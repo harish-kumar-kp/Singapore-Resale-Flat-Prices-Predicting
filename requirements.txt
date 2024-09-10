@@ -1,7 +1,6 @@
 certifi
 charset-normalizer
 click
-geopy
 idna
 numpy
 pandas
@@ -9,4 +8,8 @@ requests
 streamlit
 streamlit-option-menu
 urllib3
+pickle4
 scikit-learn
+xgboost
+matplotlib
+plotly
