@@ -11,13 +11,13 @@ import plotly.graph_objects as go
 
 
 # importning the pickled Dict of townMapping , streetMapping ,flatTypeMapping
-with open(r"saved_Model_Pickel\townMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/townMapping.pkl", 'rb') as file:
     townDict = pickle.load(file)        
 #st.write(townDict)
-with open(r"saved_Model_Pickel\streetMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/streetMapping.pkl", 'rb') as file:
     streetDict = pickle.load(file)
 #st.write(streetDict)
-with open(r"saved_Model_Pickel\flatTypeMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel/flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
@@ -26,7 +26,7 @@ df_4Sel = pd.read_csv(r'https://www.dropbox.com/scl/fi/93ae5d15l3k2ypxf9ojg3/csv
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
     page_title="Singapore Resale Flat Prices Prediction",
-    page_icon="chart\icon_singapore.png",
+    page_icon="chart/icon_singapore.png",
     layout="wide",
     initial_sidebar_state='expanded'
 )
@@ -41,7 +41,7 @@ with st.sidebar:
                                    },
                                    default_index=1
                            )
-    st.image("chart\singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
+    st.image("chart/singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
 
 
 # -----------------------------------------------Home Section--------------------------------------------------
@@ -86,16 +86,16 @@ if selected == "Home":
     st.write("###### :green[ *Source :* https://data.gov.sg/collections/189/view]")
     st.divider() 
     st.markdown("###### :blue[2. DataFrame of Distence from MRTS & CBD Details :] ")
-    df_distData = pd.read_csv(r'csv_data\mrts_cbd_Dist_onMainDF_ToML.csv')
+    df_distData = pd.read_csv(r'csv_data/mrts_cbd_Dist_onMainDF_ToML.csv')
     st.write(df_distData)
     st.write("###### :red[ *Note : These datasets were created additionally from external resources as a part of feature engineering aspect.*]")
     st.write("###### :green[ *Source :* https://mrtmapsingapore.com/mrt-stations-singapore/ ]")
     st.divider()
     st.markdown("###### :blue[3. Model Comparison chart :] ")
-    st.image('chart\\modelComparison.png') 
+    st.image('chart/modelComparison.png') 
     st.divider()
     st.markdown("###### :blue[4. Feature Comparison chart :] ")
-    st.image('chart\\FeatureChart.png') 
+    st.image('chart/FeatureChart.png') 
 
 
 # ------------------------------------------------Predict Section---------------------------------------------------
