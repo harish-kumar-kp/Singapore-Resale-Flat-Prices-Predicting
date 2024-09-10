@@ -11,13 +11,13 @@ import plotly.graph_objects as go
 
 
 # importning the pickled Dict of townMapping , streetMapping ,flatTypeMapping
-with open("saved_Model_Pickel\\townMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\townMapping.pkl", 'rb') as file:
     townDict = pickle.load(file)        
 #st.write(townDict)
-with open("saved_Model_Pickel\\streetMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\streetMapping.pkl", 'rb') as file:
     streetDict = pickle.load(file)
 #st.write(streetDict)
-with open("saved_Model_Pickel\\flatTypeMapping.pkl", 'rb') as file:
+with open(r"saved_Model_Pickel\flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
@@ -26,7 +26,7 @@ df_4Sel = pd.read_csv(r'https://www.dropbox.com/scl/fi/93ae5d15l3k2ypxf9ojg3/csv
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
     page_title="Singapore Resale Flat Prices Prediction",
-    page_icon="chart\\icon_singapore.png",
+    page_icon="chart\icon_singapore.png",
     layout="wide",
     initial_sidebar_state='expanded'
 )
@@ -41,7 +41,7 @@ with st.sidebar:
                                    },
                                    default_index=1
                            )
-    st.image("chart\\singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
+    st.image("chart\singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
 
 
 # -----------------------------------------------Home Section--------------------------------------------------
@@ -79,14 +79,14 @@ if selected == "Home":
     st.divider()
     st.markdown("##### :blue[Processed Data for Machine Learning :] ")
     st.markdown("###### :blue[1. DataFrame of House Details :] ")
-    df_propData = pd.read_csv(r'csv_data\\ML_data4Prediction.csv')
+    df_propData = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
     st.write(df_propData)
     #st.write("The Datasets are Label Endocoded(Converted From String type data to Numerical type data) for 'Town' , 'Street' , FlayType and 'Flat Model' in a Python way so as to create a ML ready Dataframe")
     st.write("###### :red[ *Note : The Datasets are Label Endocoded(Converted From String to Numerical type data) for 'Town' , 'Street' , FlayType and 'Flat Model' in a Python way so as to create a ML ready Dataframe.*]")
     st.write("###### :green[ *Source :* https://data.gov.sg/collections/189/view]")
     st.divider() 
     st.markdown("###### :blue[2. DataFrame of Distence from MRTS & CBD Details :] ")
-    df_distData = pd.read_csv(r'csv_data\\mrts_cbd_Dist_onMainDF_ToML.csv')
+    df_distData = pd.read_csv(r'csv_data\mrts_cbd_Dist_onMainDF_ToML.csv')
     st.write(df_distData)
     st.write("###### :red[ *Note : These datasets were created additionally from external resources as a part of feature engineering aspect.*]")
     st.write("###### :green[ *Source :* https://mrtmapsingapore.com/mrt-stations-singapore/ ]")
