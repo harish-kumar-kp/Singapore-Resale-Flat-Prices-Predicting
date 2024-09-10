@@ -29,7 +29,7 @@ df_4Sel = pd.read_csv(r'csv_data\\csv_4UI_selFilter.csv')
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
     page_title="Singapore Resale Flat Prices Prediction",
-    page_icon="D:\SingaporeRealEstate\photos\icon_singapore.png",
+    page_icon="chart\icon_singapore.png",
     layout="wide",
     initial_sidebar_state='expanded'
 )
@@ -44,7 +44,7 @@ with st.sidebar:
                                    },
                                    default_index=1
                            )
-    st.image("D:\SingaporeRealEstate\photos/singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
+    st.image("chart/singaStat.png", caption="Singapore Resale Flat Prices Predicting.-Machine  Learning Project By Harish Kumar K P harishk_kotte@rediffmail.com")
 
 
 # -----------------------------------------------Home Section--------------------------------------------------
