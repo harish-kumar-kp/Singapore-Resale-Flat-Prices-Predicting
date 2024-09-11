@@ -24,7 +24,8 @@ with open(r"saved_Model_Pickel/flatTypeMapping.pkl", 'rb') as file:
     flatModelDict = pickle.load(file)
 #st.write(flatTypeDict) 
 
-df_4Sel = pd.read_csv(r'https://www.dropbox.com/scl/fi/93ae5d15l3k2ypxf9ojg3/csv_4UI_selFilter.csv?rlkey=3uyzcs4c7z5bllyhn6lnxc01p&st=xkca99vj&dl=1')
+df_4Sel = pd.read_csv(r'csv_data/csv_4UI_selFilter.csv')
+df_MLdata = pd.read_csv(r'csv_data/ML_data4Prediction.csv')
 
 # -------------------------------This is the configuration page for our Streamlit Application---------------------------
 st.set_page_config(
@@ -240,13 +241,12 @@ if selected == "Predict":
 
             st.markdown("###### :small_red_triangle_down: :red[ *click here to predict*]")
             if st.button('Predict Price' ):
-                def get_data():
+                def get_data(dataFrame):
                     # Load data
-                    data = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
-                    sample_df = data.sample(n=25000, random_state=42)
+                    sample_df = dataFrame.sample(n=25000, random_state=42)
                     return sample_df
                 
-                csv_df = get_data()
+                csv_df = get_data(df_MLdata)
 
 
                 def train_model(data):
