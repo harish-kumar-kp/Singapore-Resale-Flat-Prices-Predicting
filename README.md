@@ -80,7 +80,7 @@ To use this project, follow these steps:
 2. Install the required packages and libraries : ```pip install -r requirements.txt```
 3. Launch the landingPage with Streamlit and Select the Parameters in dropdon selection boxes for both pages 'Predict' and 'Analyse'
 4. Access the app in your browser at URL ```http://localhost:8501``` when you run cloned git repository from the local computer.
-5. Access the app in your browser at URL ```http://localhost:8501``` when you run globally.
+5. Access the app in your browser at URL ```https://singapore-resale-flat-prices-predicting-wyt6.onrender.com/``` when you run globally.
 
 
 <br />
@@ -91,8 +91,9 @@ To use this project, follow these steps:
 
 **Selection of Choices:** The Specifications of the Property has many parameters be selected as the feature for inputing the Machine Learning Model. This has a very advanced filtering feature based the Town and Street selected the the further choices will be narrowed down to the factual existence of those parameters to avoid choosing the inadequate choices. for both 'Predict' and 'Analyse' section of the app ,so as to make the user experience easier and comprehensive ,self understandable.   
 
-**Data Exploratory and Visualization:** The project Feature provides comprehensive data analysis capabilities with Streamlit in the 'Analyse' section of the app to compare the price trends in the past between the 3 different Towns so as to come to a conclusion.This comparison can be done with coice of meger to broader chioce by changing the 'Year Intervals' 
-🎬 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗗𝗲𝗺𝗼 𝗩𝗶𝗱𝗲𝗼: [https://www.youtube.com/watch?v=jScf-Qh39jI&t=238s](https://www.youtube.com/watch?v=jScf-Qh39jI&t=238s)
+**Data Exploratory and Visualization:** The project Feature provides comprehensive data analysis capabilities with Streamlit in the 'Analyse' section of the app to compare the price trends in the past between the 3 different Towns so as to come to a conclusion.This comparison can be done with coice of meger to broader chioce by changing the 'Year Intervals' . 
+
+**I🎬 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗗𝗲𝗺𝗼 𝗩𝗶𝗱𝗲𝗼:**I [https://www.youtube.com/watch?v=spn2qX_0ZyY&list=PLvOopPI4rpr8B_EDpqpmuybFApYNbvbIu) **
 
 **Selection of Prediction Models:** This Project Deploys the best chossen model 'Extrean Gradient Boost Regressor' for 'Predict' section which has R2 score of 0.9868480309334249 and 'Decession Tree Regressor' for 'Analyse' section which has R2 score of 0.9802994875778663 .
 
