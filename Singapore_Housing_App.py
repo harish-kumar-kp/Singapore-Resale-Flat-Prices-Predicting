@@ -428,7 +428,7 @@ try:
 
                         def get_data():
                             # Load data
-                            data = pd.read_csv(r'csv_data\\ML_data4Prediction.csv')
+                            data = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
                             sample_df = data.sample(n=45000, random_state=47)
                             return sample_df
                         
