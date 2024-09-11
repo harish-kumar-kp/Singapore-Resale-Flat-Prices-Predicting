@@ -93,7 +93,7 @@ To use this project, follow these steps:
 
 **Data Exploratory and Visualization:** The project Feature provides comprehensive data analysis capabilities with Streamlit in the 'Analyse' section of the app to compare the price trends in the past between the 3 different Towns so as to come to a conclusion.This comparison can be done with coice of meger to broader chioce by changing the 'Year Intervals' . 
 
-**I🎬 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗗𝗲𝗺𝗼 𝗩𝗶𝗱𝗲𝗼:**I [https://www.youtube.com/watch?v=spn2qX_0ZyY&list=PLvOopPI4rpr8B_EDpqpmuybFApYNbvbIu) **
+I🎬 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗗𝗲𝗺𝗼 𝗩𝗶𝗱𝗲𝗼:**I [https://www.youtube.com/watch?v=spn2qX_0ZyY&list=PLvOopPI4rpr8B_EDpqpmuybFApYNbvbIu) 
 
 **Selection of Prediction Models:** This Project Deploys the best chossen model 'Extrean Gradient Boost Regressor' for 'Predict' section which has R2 score of 0.9868480309334249 and 'Decession Tree Regressor' for 'Analyse' section which has R2 score of 0.9802994875778663 .
 
