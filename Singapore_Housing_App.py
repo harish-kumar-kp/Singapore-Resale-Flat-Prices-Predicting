@@ -245,9 +245,8 @@ if selected == "Predict":
                     # Load data
                     sample_df = dataFrame.sample(n=25000, random_state=42)
                     return sample_df
-                
+                    
                 csv_df = get_data(df_MLdata)
-
 
                 def train_model(data):
                     # Train model here
@@ -426,14 +425,12 @@ try:
 
                         features_df = pd.DataFrame(features, index=[0])
 
-                        def get_data():
+                        def get_data(dataFrame):
                             # Load data
-                            data = pd.read_csv(r'https://www.dropbox.com/scl/fi/6ifki4313bljs98qbzo8p/ML_data4Prediction.csv?rlkey=i74f6hrppdt34wscrvdunmvxs&st=1s8q80hi&dl=1')
-                            sample_df = data.sample(n=15000, random_state=47)
+                            sample_df = dataFrame.sample(n=25000, random_state=42)
                             return sample_df
-                        
-                        csv_df = get_data()
-
+    
+                        tcsv_df = get_data(df_MLdata)
 
                         def train_model(data):
                             # Train model here
@@ -444,7 +441,7 @@ try:
                             trained_model.fit(X, y)
                             return trained_model
                         
-                        dt_regressor = train_model(csv_df)
+                        dt_regressor = train_model(tcsv_df)
 
                         # Use the trained model to make predictions
                         prediction = dt_regressor.predict(features_df)  # Replace X_test with your test data
