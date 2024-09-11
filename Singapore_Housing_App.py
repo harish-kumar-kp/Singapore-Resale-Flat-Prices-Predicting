@@ -95,10 +95,10 @@ if selected == "Home":
     st.write("###### :green[ *Source :* https://mrtmapsingapore.com/mrt-stations-singapore/ ]")
     st.divider()
     st.markdown("###### :blue[3. Model Comparison chart :] ")
-    st.image('chart\\modelComparison.png') 
+    st.image('chart/modelComparison.png') 
     st.divider()
     st.markdown("###### :blue[4. Feature Comparison chart :] ")
-    st.image('chart\\FeatureChart.png') 
+    st.image('chart/FeatureChart.png') 
 
 
 # ------------------------------------------------Predict Section---------------------------------------------------
