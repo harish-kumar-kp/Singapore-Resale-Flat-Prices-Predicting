@@ -502,7 +502,7 @@ try:
 except:
     st.write("")
     st.write(":green[*Decession Tree Regressor with ~98% RSquare Score used for this Computation*]")
-    st.write(":red[Note: Please Avoid 'LIM CHU KANG' & 'MARINE PARADE' for best results as these Town Datasets do not match on standardsall other Towns.]")
+    #st.write(":red[Note: Please Avoid 'LIM CHU KANG' & 'MARINE PARADE' for best results as these Town Datasets do not match on standardsall other Towns.]")
 
     
 
