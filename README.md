@@ -80,7 +80,7 @@ To use this project, follow these steps:
 2. Install the required packages and libraries : ```pip install -r requirements.txt```
 3. Launch the landingPage with Streamlit and Select the Parameters in dropdon selection boxes for both pages 'Predict' and 'Analyse'
 4. Access the app in your browser at URL ```http://localhost:8501``` when you run cloned git repository from the local computer.
-5. Access the app in your browser at URL ```https://singapore-resale-flat-prices-predicting-wyt6.onrender.com/``` when you run globally.
+5. Access the app in your browser at URL ```https://singapore-resale-flat-prices-predicting-1-4hh9.onrender.com/``` when you run globally.
 
 
 <br />
